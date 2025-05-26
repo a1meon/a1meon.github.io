@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="在HTML中分段嵌入Markdown内容可以通过以下步骤实现，结合客户端Markdown解析库和结构化HTML： 解决方案步骤 引入Markdown解析库使用marked.js在客户端实时解析Markdown： 1&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;marked&#x2F;marked.min.js&quot;&gt;&lt;&#x2F;script&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML中分段嵌入markdown的解决方案">
+<meta property="og:url" content="http://a1meon.github.io/2025/05/22/HTML%E4%B8%AD%E5%88%86%E6%AE%B5%E5%B5%8C%E5%85%A5markdown%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
+<meta property="og:site_name" content="a1meon">
+<meta property="og:description" content="在HTML中分段嵌入Markdown内容可以通过以下步骤实现，结合客户端Markdown解析库和结构化HTML： 解决方案步骤 引入Markdown解析库使用marked.js在客户端实时解析Markdown： 1&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;marked&#x2F;marked.min.js&quot;&gt;&lt;&#x2F;script&amp;g">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-05-22T10:22:00.000Z">
+<meta property="article:modified_time" content="2025-05-25T16:25:01.583Z">
+<meta property="article:author" content="a1meon">
+<meta name="twitter:card" content="summary">
+
+
+<title >HTML中分段嵌入markdown的解决方案</title>
+
+<!-- Favicon -->
+
+    <link href='/logo.svg?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/logo.svg?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/logo.svg?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4928306_mh4e3gvo31n.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"a1meon.github.io","author":"a1meon","root":"/","typed_text":["a1meon"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"logo.svg","icon16":"logo.svg","icon32":"logo.svg","apple_touch_icon":"logo.svg","webmanifest":null,"visibilitychange":true,"hidden":"failure.ico","show_text":"a1meon","hide_text":"a1meon","dark_logo":"logo-dark.svg"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"icon-play1","email":"icon-envelope","next":"icon-arrow-right","calendar":"icon-calendar-alt","clock":"icon-clock","user":"icon-user","back_top":"icon-arrow-up","close":"icon-times","search":"icon-search","reward":"icon-hand-holding-usd","toc_tag":"icon-thlist","read":"icon-book-reader","arrows":"icon-arrows-alt-h","double_arrows":"icon-angle-double-down","copy":"icon-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh-hans"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-05-26 00:25:01"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+
+    
+        <!-- Baidu Analytics -->
+        <script defer>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?74b9be44d98040e984c349bd0e9f93ad";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+     
+
+    
+        <!-- Google Analytics -->
+        <script async src='https://www.googletagmanager.com/gtag/js?id=G-76W2BM6V1F'></script>
+        <script defer>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-76W2BM6V1F');
+        </script>
+    
+
+    
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" class=" trm-light-icon" src="/logo.svg"> <img alt="logo" class=" trm-dark-icon" src="/logo-dark.svg">
+    
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/dev/" target="">
+                    Dev
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/dev/notes/" target="">
+                            笔记
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/dev/resources/" target="">
+                            资源
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/dev/docs/" target="">
+                            官方文档
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/album/" target="">
+                    相册
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/mcsr/" target="">
+                    mcsr
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont icon-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://cdn.jsdelivr.net/gh/a1meon/my-videos@latest/images/cover-dev.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-12">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text trm-text-center ">
+                        <div class="trm-label trm-mb-20">
+                            a1meon
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            HTML中分段嵌入markdown的解决方案
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">首页</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2025
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <!-- <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span> -->
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+            <div class="trm-page-content col-lg-12">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont icon-calendar-alt trm-icon"></i><br>
+            05/22
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont icon-clock trm-icon"></i><br>
+            18:22
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont icon-user trm-icon"></i><br>
+            a1meon
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <p>在HTML中分段嵌入Markdown内容可以通过以下步骤实现，结合客户端Markdown解析库和结构化HTML：</p>
+<h3 id="解决方案步骤"><a href="#解决方案步骤" class="headerlink" title="解决方案步骤"></a>解决方案步骤</h3><ol>
+<li><p><strong>引入Markdown解析库</strong><br>使用<code>marked.js</code>在客户端实时解析Markdown：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/marked/marked.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>结构化HTML容器</strong><br>在需要插入Markdown的位置放置空容器，并用<code>data-markdown-id</code>关联内容块：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-body&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Markdown容器1 (视频前) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-markdown-target</span>=<span class="string">&quot;before-video1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 视频1 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trm-video&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Markdown容器2 (视频后) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-markdown-target</span>=<span class="string">&quot;after-video1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>存储Markdown内容</strong><br>使用<code>&lt;script type=&quot;text/markdown&quot;&gt;</code>标签存储内容（避免HTML解析干扰）：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/markdown&quot;</span> <span class="attr">data-markdown-source</span>=<span class="string">&quot;before-video1&quot;</span>&gt;</span></span><br><span class="line">## 视频前的标题</span><br><span class="line">- 点1：介绍视频主题</span><br><span class="line">- 点2：前置知识点</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/markdown&quot;</span> <span class="attr">data-markdown-source</span>=<span class="string">&quot;after-video1&quot;</span>&gt;</span></span><br><span class="line">## 视频后的总结</span><br><span class="line">![示意图](image.jpg)  </span><br><span class="line">关键总结内容...</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>自动解析脚本</strong><br>添加JavaScript代码自动匹配并解析内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 查找所有Markdown容器</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;[data-markdown-target]&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">container</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> sourceId = container.<span class="title function_">getAttribute</span>(<span class="string">&#x27;data-markdown-target&#x27;</span>);</span><br><span class="line">        <span class="keyword">const</span> sourceEl = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(</span><br><span class="line">            <span class="string">`[data-markdown-source=&quot;<span class="subst">$&#123;sourceId&#125;</span>&quot;]`</span></span><br><span class="line">        );</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (sourceEl) &#123;</span><br><span class="line">            <span class="comment">// 解析Markdown并填充</span></span><br><span class="line">            container.<span class="property">innerHTML</span> = marked.<span class="title function_">parse</span>(sourceEl.<span class="property">textContent</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/marked/marked.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Markdown内容存储 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/markdown&quot;</span> <span class="attr">data-markdown-source</span>=<span class="string">&quot;before-video1&quot;</span>&gt;</span></span><br><span class="line">## 欢迎观看本视频</span><br><span class="line">- **主题**：HTML与Markdown集成</span><br><span class="line">- **时长**：5分钟</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/markdown&quot;</span> <span class="attr">data-markdown-source</span>=<span class="string">&quot;after-video1&quot;</span>&gt;</span></span><br><span class="line">## 课后练习</span><br><span class="line">1. 尝试在自己的页面中添加Markdown</span><br><span class="line">2. 使用[Markdown语法](https://commonmark.org)编写内容</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 页面结构 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-12&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-body&quot;</span>&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- 视频前Markdown --&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-markdown-target</span>=<span class="string">&quot;before-video1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                    <span class="comment">&lt;!-- 视频区块 --&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trm-video trm-scroll-animation&quot;</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trm-video-content&quot;</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;cover.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;封面&quot;</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;video.mp4&quot;</span> <span class="attr">class</span>=<span class="string">&quot;trm-play-button&quot;</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;icon-play&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                    <span class="comment">&lt;!-- 视频后Markdown --&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-markdown-target</span>=<span class="string">&quot;after-video1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 自动解析逻辑</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;[data-markdown-target]&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">container</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">const</span> sourceId = container.<span class="title function_">getAttribute</span>(<span class="string">&#x27;data-markdown-target&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">const</span> sourceEl = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(</span></span><br><span class="line"><span class="language-javascript">                    <span class="string">`[data-markdown-source=&quot;<span class="subst">$&#123;sourceId&#125;</span>&quot;]`</span></span></span><br><span class="line"><span class="language-javascript">                );</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span> (sourceEl) &#123;</span></span><br><span class="line"><span class="language-javascript">                    container.<span class="property">innerHTML</span> = marked.<span class="title function_">parse</span>(sourceEl.<span class="property">textContent</span>.<span class="title function_">trim</span>());</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;);</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="方案优势"><a href="#方案优势" class="headerlink" title="方案优势"></a>方案优势</h3><ol>
+<li><p><strong>内容集中管理</strong><br>所有Markdown内容在<code>&lt;script&gt;</code>标签中集中维护，与HTML结构解耦。</p>
+</li>
+<li><p><strong>精准定位</strong><br>通过<code>data-markdown-source</code>和<code>data-markdown-target</code>属性精确控制插入位置。</p>
+</li>
+<li><p><strong>扩展性强</strong><br>新增视频或内容区块时，只需复制结构并修改ID即可，无需修改JS代码。</p>
+</li>
+<li><p><strong>避免转义问题</strong><br>使用<code>&lt;script type=&quot;text/markdown&quot;&gt;</code>天然避免HTML特殊字符冲突。</p>
+</li>
+</ol>
+<h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><ul>
+<li><p><strong>异步加载外部Markdown文件</strong><br>修改<code>data-markdown-source</code>为文件路径，使用<code>fetch</code>动态加载：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-markdown-target</span>=<span class="string">&quot;md/intro.md&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在解析逻辑中替换为：</span></span><br><span class="line"><span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(sourceId);</span><br><span class="line"><span class="keyword">const</span> markdown = <span class="keyword">await</span> response.<span class="title function_">text</span>();</span><br><span class="line">container.<span class="property">innerHTML</span> = marked.<span class="title function_">parse</span>(markdown);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>语法高亮</strong><br>配合<code>highlight.js</code>实现代码高亮：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">marked.<span class="title function_">setOptions</span>(&#123;</span><br><span class="line">    <span class="attr">highlight</span>: <span class="function">(<span class="params">code</span>) =&gt;</span> hljs.<span class="title function_">highlightAuto</span>(code).<span class="property">value</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>通过此方案，您可以灵活地在HTML的任何位置插入Markdown内容，同时保持代码的可维护性和可读性。</p>
+
+</article>
+    
+    <div class="trm-reward">
+        
+            <span class="trm-reward-btn trm-glow" onclick='var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === "none") ? "block" : "none";'>
+                <i class="iconfont icon-hand-holding-usd"></i>
+            </span>
+        
+        <p class="trm-reward-comment">每一份支持都如同星星般闪耀✨</p>
+        <div id="qr" style="display:none;">
+            
+                <div style="display:inline-block">
+                    <a rel="noopener noreferrer" href='https://cdn.jsdelivr.net/gh/a1meon/my-videos@latest/images/wx_zanshang.jpg' target='_blank' >
+                       <img src="https://cdn.jsdelivr.net/gh/a1meon/my-videos@latest/images/wx_zanshang.jpg" alt="微信" loading="lazy">
+                    </a>
+                    <p>微信</p>
+                </div>
+            
+        </div>
+    </div>
+
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        a1meon
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="http://a1meon.github.io/2025/05/22/HTML中分段嵌入markdown的解决方案/" title="HTML中分段嵌入markdown的解决方案">http://a1meon.github.io/2025/05/22/HTML中分段嵌入markdown的解决方案/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/05/22/japan/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%94%9F%E6%B4%BB/">
+                    生活
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/05/22/japan/" class="trm-anima-link">
+                    日本旅行
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/05/22</li>
+                <li>19:16</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/05/22/qingdao/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    未分类
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/05/22/qingdao/" class="trm-anima-link">
+                    壁纸
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/05/22</li>
+                <li>05:53</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <div>
+    <!-- 页脚 -->
+     <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-copyright">
+                        <p>Copyright © 2025 - 2025. <span class="font-style">a1meon</span></p>
+                        <!-- 博客运行时间 -->
+                         <p >本站已运行 <span id="span_dt_dt" class="font-style"></span> 天</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+
+<script>
+    // 计算博客运行时间,展示在页脚的span_dt_dt
+    window.onload = function () {
+        var createTime = new Date(2025, 0, 1);
+        setInterval(function () {
+            var now = new Date();
+            var days = parseInt((now - createTime) / 1000 / 60 / 60 / 24, 10);
+            var hours = parseInt((now - createTime) / 1000 / 60 / 60 % 24, 10);
+            document.getElementById('span_dt_dt').innerHTML = days;
+        })
+    }
+</script>
+
+
+<style>
+    /* 居中 */
+    .footer {
+        text-align: center;
+    }
+    .font-style {
+        color: #406cff;
+    }
+    .footer-copyright {
+        font-size: 10px;
+    }
+    p {
+        padding-bottom: 10px;
+    }
+</style>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-3" title="解决方案步骤"><a rel="nofollow" class="trm-toc-link" href="#解决方案步骤"><span class="trm-toc-text">解决方案步骤</span></a></li><li class="trm-toc-item trm-toc-level-3" title="完整示例"><a rel="nofollow" class="trm-toc-link" href="#完整示例"><span class="trm-toc-text">完整示例</span></a></li><li class="trm-toc-item trm-toc-level-3" title="方案优势"><a rel="nofollow" class="trm-toc-link" href="#方案优势"><span class="trm-toc-text">方案优势</span></a></li><li class="trm-toc-item trm-toc-level-3" title="高级用法"><a rel="nofollow" class="trm-toc-link" href="#高级用法"><span class="trm-toc-text">高级用法</span></a></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont icon-thlist"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont icon-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont icon-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont icon-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont icon-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+        
+<script src="https://npm.elemecdn.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.2.6"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+			<script src="/js/plugins/danmu.js?v=2.2.6"></script>
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+    <script data-swup-reload-script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>

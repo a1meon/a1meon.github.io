@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta property="og:type" content="website">
+<meta property="og:title" content="官方文档">
+<meta property="og:url" content="http://a1meon.github.io/dev/docs/index.html">
+<meta property="og:site_name" content="a1meon">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-05-21T20:00:15.726Z">
+<meta property="article:modified_time" content="2025-05-21T20:00:15.726Z">
+<meta property="article:author" content="a1meon">
+<meta name="twitter:card" content="summary">
+
+
+<title >官方文档</title>
+
+<!-- Favicon -->
+
+    <link href='/logo.svg?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/logo.svg?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/logo.svg?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4928306_mh4e3gvo31n.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"a1meon.github.io","author":"a1meon","root":"/","typed_text":["a1meon"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"logo.svg","icon16":"logo.svg","icon32":"logo.svg","apple_touch_icon":"logo.svg","webmanifest":null,"visibilitychange":true,"hidden":"failure.ico","show_text":"a1meon","hide_text":"a1meon","dark_logo":"logo-dark.svg"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"icon-play1","email":"icon-envelope","next":"icon-arrow-right","calendar":"icon-calendar-alt","clock":"icon-clock","user":"icon-user","back_top":"icon-arrow-up","close":"icon-times","search":"icon-search","reward":"icon-hand-holding-usd","toc_tag":"icon-thlist","read":"icon-book-reader","arrows":"icon-arrows-alt-h","double_arrows":"icon-angle-double-down","copy":"icon-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh-hans"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2025-05-22 04:00:15"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+
+    
+        <!-- Baidu Analytics -->
+        <script defer>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?74b9be44d98040e984c349bd0e9f93ad";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+     
+
+    
+        <!-- Google Analytics -->
+        <script async src='https://www.googletagmanager.com/gtag/js?id=G-76W2BM6V1F'></script>
+        <script defer>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-76W2BM6V1F');
+        </script>
+    
+
+    
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" class=" trm-light-icon" src="/logo.svg"> <img alt="logo" class=" trm-dark-icon" src="/logo-dark.svg">
+    
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/dev/" target="">
+                    Dev
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/dev/notes/" target="">
+                            笔记
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/dev/resources/" target="">
+                            资源
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/dev/docs/" target="">
+                            官方文档
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/album/" target="">
+                    相册
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/mcsr/" target="">
+                    mcsr
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont icon-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+
+    
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.jpg">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-12">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text trm-text-center ">
+                        <div class="trm-label trm-mb-20">
+                            Hi Here is a1meon!
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            官方文档
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">首页</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        dev
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <!-- <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span> -->
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+            <div class="trm-page-content col-lg-12">
+                <div id="trm-content" class="trm-content">
+                    <!-- 汇总主流的官方技术文档网站,按照下列内容添加对应的卡片,卡片需要一个圆形图标,一个标题,一个描述,点击卡片跳转到对应的官方文档
+
+### 一、基础技术栈
+
+1. **Java核心**
+   - Java SE官方文档（按版本分类）
+   - JVM规范与调优文档
+   - Java并发编程文档
+   - Java NIO/Netty
+2. **开发框架**
+   - Spring Framework
+   - Spring Boot
+   - Jakarta EE (原Java EE)
+   - MyBatis/Hibernate
+   - Vert.x/Quarkus（响应式框架）
+
+### 二、中间件与数据库
+
+1. **关系型数据库**
+   - MySQL/Oracle/PostgreSQL
+   - 连接池：HikariCP/Druid
+2. **NoSQL**
+   - MongoDB
+   - Redis
+   - Elasticsearch
+3. **消息队列**
+   - Kafka
+   - RabbitMQ
+   - RocketMQ
+4. **分布式协调**
+   - ZooKeeper
+   - Etcd
+   - Nacos
+
+### 三、前端协作体系
+
+1. **基础技术**
+   - HTML5/CSS3规范
+   - JavaScript/TypeScript
+   - Web组件化标准（Web Components）
+2. **现代框架**
+   - React/Vue.js/Angular
+   - Next.js/Nuxt.js（SSR框架）
+   - Webpack/Vite构建工具
+3. **前后端交互**
+   - RESTful API设计规范
+   - GraphQL官方文档
+   - WebSocket协议文档
+   - OpenAPI/Swagger规范
+4. **模板引擎**
+   - Thymeleaf（Java生态）
+   - Freemarker/Velocity
+
+### 四、分布式与云原生
+
+1. **微服务架构**
+   - Spring Cloud Alibaba
+   - Dubbo
+   - gRPC
+2. **服务治理**
+   - 注册中心（Nacos/Eureka）
+   - 配置中心（Apollo）
+   - 网关（Spring Cloud Gateway/Kong）
+   - 熔断限流（Sentinel/Hystrix）
+3. **容器化**
+   - Docker
+   - Kubernetes
+   - OpenShift
+
+### 五、基础设施
+
+1. **服务器环境**
+   - Tomcat/Jetty
+   - Web服务器（Nginx/OpenResty）
+2. **监控体系**
+   - Prometheus
+   - Grafana
+   - SkyWalking
+3. **日志系统**
+   - ELK Stack
+   - Loki
+
+### 六、开发工具链
+
+1. **构建工具**
+   - Maven
+   - Gradle
+2. **CI/CD**
+   - Jenkins
+   - GitLab CI
+   - Argo CD
+3. **代码质量**
+   - SonarQube
+   - JaCoCo
+   - Checkstyle
+
+### 七、安全体系
+
+1. **应用安全**
+   - Spring Security
+   - Shiro
+   - OAuth2/OIDC
+2. **数据安全**
+   - JWT规范
+   - HTTPS配置
+   - 国密算法
+
+### 八、质量保障体系
+
+1. **测试框架**
+   - JUnit5/TestNG
+   - Mockito/PowerMock
+   - Selenium/Cypress（E2E测试）
+   - JMeter/Gatling（压测工具）
+2. **测试类型文档**
+   - 单元测试最佳实践
+   - 接口测试规范（Postman/APIFox）
+   - 混沌工程原则（Chaos Monkey）
+   - 安全测试（OWASP ZAP）
+3. **质量平台**
+   - SonarQube代码扫描
+   - Jacoco覆盖率报告
+   - Allure测试报告
+
+------
+
+### 九、运维工程化
+
+1. **部署架构**
+   - 蓝绿部署文档
+   - 金丝雀发布方案
+   - 不可变基础设施原则
+2. **监控告警**
+   - Zabbix企业级监控
+   - 阿里云ARMS/腾讯云监控
+   - 智能告警（Prometheus AlertManager）
+3. **自动化运维**
+   - Ansible剧本手册
+   - Terraform基础设施即代码
+   - Rundeck任务调度
+4. **灾备方案**
+   - 数据库主从切换文档
+   - 跨机房容灾方案
+   - 数据备份策略（xtrabackup）
+
+
+
+### 十、前沿技术
+
+1. **云原生技术**
+   - Service Mesh（Istio）
+   - Serverless框架
+2. **大数据处理**
+   - Flink
+   - Spark
+3. **AI工程化**
+   - TensorFlow Serving
+   - ONNX Runtime
+
+### 十一、规范与最佳实践
+
+1. **开发规范**
+   - RESTful API设计
+   - 领域驱动设计（DDD）
+   - 微服务设计模式
+2. **工程实践**
+   - 十二要素应用
+   - Git Flow工作流
+   - 混沌工程
+
+ -->
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <div>
+    <!-- 页脚 -->
+     <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-copyright">
+                        <p>Copyright © 2025 - 2025. <span class="font-style">a1meon</span></p>
+                        <!-- 博客运行时间 -->
+                         <p >本站已运行 <span id="span_dt_dt" class="font-style"></span> 天</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+
+<script>
+    // 计算博客运行时间,展示在页脚的span_dt_dt
+    window.onload = function () {
+        var createTime = new Date(2025, 0, 1);
+        setInterval(function () {
+            var now = new Date();
+            var days = parseInt((now - createTime) / 1000 / 60 / 60 / 24, 10);
+            var hours = parseInt((now - createTime) / 1000 / 60 / 60 % 24, 10);
+            document.getElementById('span_dt_dt').innerHTML = days;
+        })
+    }
+</script>
+
+
+<style>
+    /* 居中 */
+    .footer {
+        text-align: center;
+    }
+    .font-style {
+        color: #406cff;
+    }
+    .footer-copyright {
+        font-size: 10px;
+    }
+    p {
+        padding-bottom: 10px;
+    }
+</style>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont icon-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont icon-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont icon-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+        
+<script src="https://npm.elemecdn.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.2.6"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+			<script src="/js/plugins/danmu.js?v=2.2.6"></script>
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+    <script data-swup-reload-script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>

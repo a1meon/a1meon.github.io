@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="一、基本命令1. ls命令-列出文件格式：ls [-a -l -h] [linux路径] -a：all 列出全部文件（包括隐藏的文件&#x2F;文件夹） -l：以列表形式展示（竖向，展示更多信息） -h：以易于阅读的形式展示文件大小（显示单位） 2. cd命令-切换工作目录格式：cd [linux路径] cd 无选项，如果不写参数，表示回到用户的home目录 3. pwd命令-查看当前工作目录格式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 笔记">
+<meta property="og:url" content="http://a1meon.github.io/2025/03/09/Linux/index.html">
+<meta property="og:site_name" content="a1meon">
+<meta property="og:description" content="一、基本命令1. ls命令-列出文件格式：ls [-a -l -h] [linux路径] -a：all 列出全部文件（包括隐藏的文件&#x2F;文件夹） -l：以列表形式展示（竖向，展示更多信息） -h：以易于阅读的形式展示文件大小（显示单位） 2. cd命令-切换工作目录格式：cd [linux路径] cd 无选项，如果不写参数，表示回到用户的home目录 3. pwd命令-查看当前工作目录格式">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-03-08T21:05:00.000Z">
+<meta property="article:modified_time" content="2025-05-25T04:27:19.148Z">
+<meta property="article:author" content="a1meon">
+<meta name="twitter:card" content="summary">
+
+
+<title >Linux 笔记</title>
+
+<!-- Favicon -->
+
+    <link href='/logo.svg?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/logo.svg?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/logo.svg?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4928306_mh4e3gvo31n.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"a1meon.github.io","author":"a1meon","root":"/","typed_text":["a1meon"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"logo.svg","icon16":"logo.svg","icon32":"logo.svg","apple_touch_icon":"logo.svg","webmanifest":null,"visibilitychange":true,"hidden":"failure.ico","show_text":"a1meon","hide_text":"a1meon","dark_logo":"logo-dark.svg"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"icon-play1","email":"icon-envelope","next":"icon-arrow-right","calendar":"icon-calendar-alt","clock":"icon-clock","user":"icon-user","back_top":"icon-arrow-up","close":"icon-times","search":"icon-search","reward":"icon-hand-holding-usd","toc_tag":"icon-thlist","read":"icon-book-reader","arrows":"icon-arrows-alt-h","double_arrows":"icon-angle-double-down","copy":"icon-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh-hans"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-05-25 12:27:19"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+
+    
+        <!-- Baidu Analytics -->
+        <script defer>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?74b9be44d98040e984c349bd0e9f93ad";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+     
+
+    
+        <!-- Google Analytics -->
+        <script async src='https://www.googletagmanager.com/gtag/js?id=G-76W2BM6V1F'></script>
+        <script defer>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-76W2BM6V1F');
+        </script>
+    
+
+    
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" class=" trm-light-icon" src="/logo.svg"> <img alt="logo" class=" trm-dark-icon" src="/logo-dark.svg">
+    
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/dev/" target="">
+                    Dev
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/dev/notes/" target="">
+                            笔记
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/dev/resources/" target="">
+                            资源
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/dev/docs/" target="">
+                            官方文档
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/album/" target="">
+                    相册
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/mcsr/" target="">
+                    mcsr
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont icon-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://cdn.jsdelivr.net/gh/a1meon/my-videos@latest/images/linux.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-12">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text trm-text-center ">
+                        <div class="trm-label trm-mb-20">
+                            Linux notes!
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            Linux 笔记
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">首页</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2025
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <!-- <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span> -->
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+            <div class="trm-page-content col-lg-12">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont icon-calendar-alt trm-icon"></i><br>
+            03/09
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont icon-clock trm-icon"></i><br>
+            05:05
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont icon-user trm-icon"></i><br>
+            a1meon
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="一、基本命令"><a href="#一、基本命令" class="headerlink" title="一、基本命令"></a>一、基本命令</h1><h2 id="1-ls命令-列出文件"><a href="#1-ls命令-列出文件" class="headerlink" title="1. ls命令-列出文件"></a>1. ls命令-列出文件</h2><p><strong>格式：</strong><code>ls [-a -l -h] [linux路径]</code></p>
+<p>-a：all 列出全部文件（包括隐藏的文件&#x2F;文件夹）</p>
+<p>-l：以列表形式展示（竖向，展示更多信息）</p>
+<p>-h：以易于阅读的形式展示文件大小（显示单位）</p>
+<h2 id="2-cd命令-切换工作目录"><a href="#2-cd命令-切换工作目录" class="headerlink" title="2. cd命令-切换工作目录"></a>2. cd命令-切换工作目录</h2><p><strong>格式：</strong><code>cd [linux路径]</code></p>
+<p><em>cd 无选项，如果不写参数，表示回到用户的home目录</em></p>
+<h2 id="3-pwd命令-查看当前工作目录"><a href="#3-pwd命令-查看当前工作目录" class="headerlink" title="3. pwd命令-查看当前工作目录"></a>3. pwd命令-查看当前工作目录</h2><p><strong>格式：</strong><code>pwd</code></p>
+<h2 id="4-mkdir命令-创建新的目录"><a href="#4-mkdir命令-创建新的目录" class="headerlink" title="4. mkdir命令-创建新的目录"></a>4. mkdir命令-创建新的目录</h2><p><strong>格式：</strong><code>mkdir [-p] Linux路径</code></p>
+<p>-p：选项可选，表示自动创建不存在的父目录，适用于创建连续多层级的目录</p>
+<h2 id="5-touch命令-创建文件"><a href="#5-touch命令-创建文件" class="headerlink" title="5. touch命令-创建文件"></a>5. touch命令-创建文件</h2><p><strong>格式：</strong><code>touch [Linux路径]</code></p>
+<h2 id="6-cat命令-查看文件内容"><a href="#6-cat命令-查看文件内容" class="headerlink" title="6. cat命令-查看文件内容"></a>6. cat命令-查看文件内容</h2><p><strong>格式：</strong><code>cat [Linux路径]</code></p>
+<h2 id="7-more命令-分页查看文件内容"><a href="#7-more命令-分页查看文件内容" class="headerlink" title="7. more命令-分页查看文件内容"></a>7. more命令-分页查看文件内容</h2><ul>
+<li>cat是直接将文件内容全部显示，more可以分页显示，适用于文件内容较多的情况</li>
+</ul>
+<p><strong>格式：</strong><code>more [Linux路径]</code></p>
+<p><em>按Q退出</em></p>
+<h2 id="8-cp命令-复制文件或文件夹"><a href="#8-cp命令-复制文件或文件夹" class="headerlink" title="8. cp命令-复制文件或文件夹"></a>8. cp命令-复制文件或文件夹</h2><p><strong>格式：</strong>cp [-r] 参数1 参数2</p>
+<p>-r：可选，用于复制文件夹</p>
+<p>参数1：表示被移动的文件或文件夹</p>
+<p>参数2：表示要移动去的地方</p>
+<h2 id="9-mv命令-移动文件或文件夹"><a href="#9-mv命令-移动文件或文件夹" class="headerlink" title="9. mv命令-移动文件或文件夹"></a>9. mv命令-移动文件或文件夹</h2><p><strong>格式：</strong><code>mv 参数1 参数2</code></p>
+<p>参数1：表示被移动的文件或文件夹</p>
+<p>参数2：表示要移动去的地方</p>
+<h2 id="10-rm命令-删除文件或文件夹"><a href="#10-rm命令-删除文件或文件夹" class="headerlink" title="10. rm命令-删除文件或文件夹"></a>10. rm命令-删除文件或文件夹</h2><p><strong>格式：</strong><code>rm [-r -f] 参数1 参数2 ...... 参数n</code></p>
+<p>-r：用于删除文件夹</p>
+<p>-f：force，表示强制删除（不会弹出提示信息）</p>
+<p>参数1 参数2 …… 参数n表示要删除的文件</p>
+<h2 id="11-which命令-查找命令的程序文件"><a href="#11-which命令-查找命令的程序文件" class="headerlink" title="11. which命令-查找命令的程序文件"></a>11. which命令-查找命令的程序文件</h2><p><strong>格式：</strong><code>which [命令]</code></p>
+<h2 id="12-find命令-查找指定文件-按文件大小查找文件"><a href="#12-find命令-查找指定文件-按文件大小查找文件" class="headerlink" title="12. find命令-查找指定文件&#x2F;按文件大小查找文件"></a>12. find命令-查找指定文件&#x2F;按文件大小查找文件</h2><p><strong>查找指定文件：</strong><code>find 起始路径 -name “被查找文件名“</code></p>
+<p><strong>按文件大小查找文件：</strong><code>find 起始路径 -size +|-n[kMG]</code></p>
+<p><em>find支持通配符，<code>test*</code>、<code>*test</code>、<code>*test*</code></em></p>
+<p><em>+、-表示大于和小于，n表示大小数字，kMG表示大小单位,kb、MB、GB</em></p>
+<h2 id="13-grep命令-从文件中通过关键字过滤文件行"><a href="#13-grep命令-从文件中通过关键字过滤文件行" class="headerlink" title="13. grep命令-从文件中通过关键字过滤文件行"></a>13. grep命令-从文件中通过关键字过滤文件行</h2><p><strong>格式：</strong> <code>grep [-n] 关键字 文件路径</code></p>
+<p>-n：表示在结果中显示匹配的行的行号</p>
+<p>关键字：必填，表示过滤的关键字，带有空格或其他特殊符号，建议”“将关键字包起来</p>
+<p>文件路径：必填，被过滤的文件路径</p>
+<h2 id="14-wc命令-数量统计"><a href="#14-wc命令-数量统计" class="headerlink" title="14. wc命令-数量统计"></a>14. wc命令-数量统计</h2><p><strong>格式：</strong><code>wc [-c -m -l -w] 文件路径</code></p>
+<p>-c：统计bytes数量</p>
+<p>-m：统计字符数量</p>
+<p>-l：统计行数</p>
+<p>-w：统计单词数量</p>
+<p>文件路径，被统计的文件</p>
+<h2 id="15-管道符"><a href="#15-管道符" class="headerlink" title="15. 管道符 - |"></a>15. 管道符 - |</h2><p>将管道符左边命令的结果作为右边命令的输入</p>
+<p><strong>格式：</strong><code>command1 | command2</code></p>
+<p>例：</p>
+<p>查找一个日志文件中包含特定关键词的行，并计算其数量</p>
+<p><code>cat logfile.txt | grep &quot;关键词&quot; | wc -l</code></p>
+<h2 id="16-echo-在命令行内输出指定内容"><a href="#16-echo-在命令行内输出指定内容" class="headerlink" title="16. echo - 在命令行内输出指定内容"></a>16. echo - 在命令行内输出指定内容</h2><p><strong>格式：</strong><code>echo 输出的内容</code></p>
+<p><strong>反引号 - &#96;</strong></p>
+<p>被&#96;&#96;包围内容会作为命令执行</p>
+<p><strong>重定向符 - &gt;和&gt;&gt;</strong></p>
+<ul>
+<li><code>&gt;</code>  ：将左侧命令的结果，覆盖写入到符号右侧文件</li>
+<li><code>&gt;&gt;</code> ：将左侧命令的结果，追加吸入符号右侧</li>
+</ul>
+<h2 id="17-tail命令-查看文件尾部内容"><a href="#17-tail命令-查看文件尾部内容" class="headerlink" title="17.tail命令 - 查看文件尾部内容"></a>17.tail命令 - 查看文件尾部内容</h2><p><strong>格式：</strong><code>tail [-f -num] Linux路径</code></p>
+<p>-f：表示持续跟踪</p>
+<p>-num：表示查看尾部多少行</p>
+<p>Linux路径，表示被跟踪的文件路径</p>
+<h2 id="18-vi-编辑器"><a href="#18-vi-编辑器" class="headerlink" title="18.vi 编辑器"></a>18.vi 编辑器</h2><p>三种工作模式</p>
+<p><strong>命令模式</strong>（Command mode）：vi编辑器默认进入命令模式，在输入模式下按esc返回</p>
+<p><strong>输入模式</strong>（Insert mode）：i、a、o进入</p>
+<p><strong>底线命令模式</strong>（Last line mode）：冒号（:）进入</p>
+<p>常用命令</p>
+<p><strong>用于移动光标的 Vim 命令</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">动作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">h</td>
+<td align="left">将光标向左移动</td>
+</tr>
+<tr>
+<td align="left">j、加号 (+)、Enter 或 Return</td>
+<td align="left">将光标向下移动</td>
+</tr>
+<tr>
+<td align="left">k、减号 (-)</td>
+<td align="left">将光标向上移动</td>
+</tr>
+<tr>
+<td align="left">l</td>
+<td align="left">将光标向右移动</td>
+</tr>
+<tr>
+<td align="left">}</td>
+<td align="left">将光标移动到当前段落的末尾</td>
+</tr>
+<tr>
+<td align="left">{</td>
+<td align="left">将光标移动到当前段落的开头</td>
+</tr>
+<tr>
+<td align="left">)</td>
+<td align="left">将光标移动到当前句子的末尾</td>
+</tr>
+<tr>
+<td align="left">(</td>
+<td align="left">将光标移动到当前句子的开头</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">移动到当前行的第一个非空字符</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">移动到当前行末尾</td>
+</tr>
+<tr>
+<td align="left">0 (zero)</td>
+<td align="left">移动到当前行开头</td>
+</tr>
+<tr>
+<td align="left">w or W</td>
+<td align="left">移动到下一单词的开头</td>
+</tr>
+<tr>
+<td align="left">b or B</td>
+<td align="left">移动到上一单词的开头</td>
+</tr>
+<tr>
+<td align="left">e</td>
+<td align="left">移动到下一单词的末尾</td>
+</tr>
+<tr>
+<td align="left">H</td>
+<td align="left">移动到屏幕的第一行</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td align="left">移动到屏幕的中间一行</td>
+</tr>
+<tr>
+<td align="left">L</td>
+<td align="left">移动到屏幕的最后一行</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">移动到文件末尾</td>
+</tr>
+<tr>
+<td align="left">gg</td>
+<td align="left">移动到文件开头</td>
+</tr>
+<tr>
+<td align="left">:n</td>
+<td align="left">移动到行 <em>n</em></td>
+</tr>
+</tbody></table>
+<br>
+
+<p><strong>用于删除文本的 Vim 命令</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">动作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">d</td>
+<td align="left">删除选中的区域</td>
+</tr>
+<tr>
+<td align="left">dd</td>
+<td align="left">删除整个当前行</td>
+</tr>
+<tr>
+<td align="left">10dd</td>
+<td align="left">删除从当前行开始的 10 行，</td>
+</tr>
+<tr>
+<td align="left">dw</td>
+<td align="left">从当前位置向前删除单词</td>
+</tr>
+<tr>
+<td align="left">db</td>
+<td align="left">从当前光标位置左边开始向后删除单词</td>
+</tr>
+<tr>
+<td align="left">dl</td>
+<td align="left">删除当前光标位置的字符</td>
+</tr>
+<tr>
+<td align="left">dh</td>
+<td align="left">删除当前光标位置左边的字符</td>
+</tr>
+<tr>
+<td align="left">d0 (zero)</td>
+<td align="left">删除当前光标位置到行开头之间的单词</td>
+</tr>
+<tr>
+<td align="left">D | d$</td>
+<td align="left">删除从当前光标位置开始的整个行</td>
+</tr>
+<tr>
+<td align="left">x</td>
+<td align="left">删除光标当前位置的字符</td>
+</tr>
+<tr>
+<td align="left">X</td>
+<td align="left">删除光标当前位置之前的字符</td>
+</tr>
+</tbody></table>
+<br>
+
+<p><strong>常用 Vim 命令</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">动作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ih</td>
+<td align="left">进入插入模式并在当前光标处插入</td>
+</tr>
+<tr>
+<td align="left">I</td>
+<td align="left">进入插入模式并在当前行的开始处插入</td>
+</tr>
+<tr>
+<td align="left">a</td>
+<td align="left">进入插入模式并追加到光标后面</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="left">进入插入模式并追加到当前行末尾</td>
+</tr>
+<tr>
+<td align="left">c</td>
+<td align="left">更改选中的区域</td>
+</tr>
+<tr>
+<td align="left">C</td>
+<td align="left">更改从光标当前位置开始的整个行</td>
+</tr>
+<tr>
+<td align="left">o</td>
+<td align="left">在光标当前所在行下方创建一个新空行，并将光标移动到这一新空行的开头</td>
+</tr>
+<tr>
+<td align="left">O</td>
+<td align="left">在光标当前所在行的上方创建一个新空行，并将光标移动到这一新空行的开头</td>
+</tr>
+<tr>
+<td align="left">r</td>
+<td align="left">替换光标当前位置的单个字符</td>
+</tr>
+<tr>
+<td align="left">R</td>
+<td align="left">替换从光标当前位置开始的多个字符，并在退出插入模式时结束</td>
+</tr>
+<tr>
+<td align="left"><Esc></td>
+<td align="left">退出插入或可视模式</td>
+</tr>
+<tr>
+<td align="left">&gt; or <Tab></td>
+<td align="left">向选中区域右边缩进</td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td align="left">向选中区域左边缩进</td>
+</tr>
+<tr>
+<td align="left">v</td>
+<td align="left">启动时突出显示字符</td>
+</tr>
+<tr>
+<td align="left">V</td>
+<td align="left">启动时突出显示的整个行</td>
+</tr>
+<tr>
+<td align="left">yy</td>
+<td align="left">将当前行移动&#x2F;复制到内存</td>
+</tr>
+<tr>
+<td align="left">10yy</td>
+<td align="left">将从当前行开始的 10 行移动&#x2F;复制到内存</td>
+</tr>
+<tr>
+<td align="left">p</td>
+<td align="left">粘贴复制或剪切的文本；如果字符被复制（<code>yw</code> <code>dw</code> 或 <code>D</code>），就在光标当前位置之后粘贴这些字符。如果复制的是行，就在光标当前所在的行下面粘贴这些行</td>
+</tr>
+<tr>
+<td align="left">P</td>
+<td align="left">作用和 <code>p</code> 一样，但是它在光标当前位置的前面粘贴字符，在光标当前所在行上面粘贴行</td>
+</tr>
+<tr>
+<td align="left">u</td>
+<td align="left">撤消最后的更改</td>
+</tr>
+<tr>
+<td align="left"><Ctrl> R</td>
+<td align="left">重做</td>
+</tr>
+<tr>
+<td align="left">&#x2F;<pattern></td>
+<td align="left">搜索已找到的下一个模式，并将光标放在已找到的模式的开头</td>
+</tr>
+<tr>
+<td align="left">?<pattern></td>
+<td align="left">搜索已找到的上一个模式，并将光标放在已找到的模式的开头</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">重复上一次的搜索</td>
+</tr>
+<tr>
+<td align="left">N</td>
+<td align="left">重复上一次的搜索，但搜索的方向相反</td>
+</tr>
+<tr>
+<td align="left">!<cmd></td>
+<td align="left">在 Vim 会话外执行 <code>&lt;cmd&gt;</code></td>
+</tr>
+</tbody></table>
+<br>
+
+<p>cheetsheets：<a target="_blank" rel="noopener" href="https://cheatsheets.zip/vim">https://cheatsheets.zip/vim</a></p>
+<p>vim中文文档：<a target="_blank" rel="noopener" href="https://vimcdoc.sourceforge.net/doc/index.html">https://vimcdoc.sourceforge.net/doc/index.html</a></p>
+<h1 id="二、用户"><a href="#二、用户" class="headerlink" title="二、用户"></a>二、用户</h1><h2 id="1-su命令-切换用户"><a href="#1-su命令-切换用户" class="headerlink" title="1. su命令-切换用户"></a>1. su命令-切换用户</h2><p><strong>格式：</strong><code>su [-] [用户名]</code></p>
+<p>-：是可选的，表示是否在切换用户后加载环境变量，<strong>建议带上</strong></p>
+<p>用户名，表示要切换的用户，用户名也可以省略，省略表示切换到root</p>
+<p><em>切换用户后，可以通过exit命令退回上一个用户，也可以使用快捷键：ctrl + d</em></p>
+<h2 id="2-sudo命令-临时以root身份执行其他命令"><a href="#2-sudo命令-临时以root身份执行其他命令" class="headerlink" title="2. sudo命令-临时以root身份执行其他命令"></a>2. sudo命令-临时以root身份执行其他命令</h2><p><strong>格式：</strong><code>sudo 其他命令</code></p>
+<p><em>我们需要为普通用户配置sudo认证</em></p>
+<h2 id="3-用户组管理"><a href="#3-用户组管理" class="headerlink" title="3. 用户组管理"></a>3. 用户组管理</h2><p>创建用户组：<code>groupadd 用户组名</code></p>
+<p>删除用户组：<code>droupdel 用户组名</code></p>
+<h2 id="4-用户管理"><a href="#4-用户管理" class="headerlink" title="4. 用户管理"></a>4. 用户管理</h2><p><strong>创建用户：</strong><code>useradd [-g -d] 用户名</code></p>
+<p>-g：指定用户的组，如不指定会自动创建用户组并加入</p>
+<p>-d：指定用户HOME路径，如不指定，HOME默认在&#x2F;home&#x2F;用户名</p>
+<p><strong>删除用户：</strong><code>userdel [-r] 用户名</code></p>
+<p>-r：删除用户的home目录，不适用-r，删除时home目录保留</p>
+<p><strong>查看用户所属组：</strong><code>id [用户名]</code></p>
+<p>用户名为被查看的用户，如果不提供则查看自身</p>
+<p><strong>修改用户所属组：</strong><code>usermod -aG 用户组 用户名</code></p>
+<p>将指定用户加入指定用户组</p>
+<p><strong>查看当前系统中用户：</strong><code>getent passwd 查看当前系统中的用户</code></p>
+<p><strong>查看当前系统中用户组：</strong><code>getent group 查看当前系统中的用户组</code></p>
+<h2 id="5-查看权限控制信息"><a href="#5-查看权限控制信息" class="headerlink" title="5. 查看权限控制信息"></a>5. 查看权限控制信息</h2><p> <code>-</code>：文件	<code>d</code>：文件夹	<code>l</code>：软链接</p>
+<p><code>r</code>：读权限	<code>w</code>：写权限	<code>x</code>：执行权限</p>
+<p>例：drwxr-xr-x，d表示文件夹，rwx表示所属用户权限，r-x表示所属用户组权限，r-x表示其他用户权限</p>
+<h2 id="6-chmod命令-修改文件或文件夹的权限"><a href="#6-chmod命令-修改文件或文件夹的权限" class="headerlink" title="6. chmod命令-修改文件或文件夹的权限"></a>6. chmod命令-修改文件或文件夹的权限</h2><p>只能是文件或文件夹的所属用户或root用户有权限修改</p>
+<p><strong>格式：</strong><code>chmod [-R] 权限 文件或文件夹</code></p>
+<p>-R：对文件夹内的全部内容应用同样的操作</p>
+<blockquote>
+<p>例：</p>
+<p>chmod u &#x3D; rwx,g&#x3D;rx,o&#x3D;x hello.txt，将文件权限修改为rwxr-x–x</p>
+<p>chmod -R u&#x3D;rwx,g&#x3D;rx,o&#x3D;x test，将文件夹test及文件夹内的全部内容权限修改为rwxr-x–x</p>
+</blockquote>
+<p>权限可以用3位数字来表示</p>
+<p><code>0</code>：- - -	<code>1</code>：- -x	<code>2</code>：-w-	<code>3</code>：-wx</p>
+<p><code>4</code>：r- -	<code>5</code>：r-x	<code>6</code>：rw-	<code>7</code>：rwx</p>
+<h2 id="7-chown命令-修改文件或文件夹的所属用户、用户组"><a href="#7-chown命令-修改文件或文件夹的所属用户、用户组" class="headerlink" title="7. chown命令-修改文件或文件夹的所属用户、用户组"></a>7. chown命令-修改文件或文件夹的所属用户、用户组</h2><p>普通用户无法修改所属为其他用户或组，所以此命令只适用于root用户执行</p>
+<p><strong>格式：</strong><code>chown [-R] [用户] [:] [用户组] 文件或文件夹</code></p>
+<p>-R：同chmod，对文件夹内全部内容应用相同规则</p>
+<p>用户：修改所属用户</p>
+<p>用户组：修改所属用户组</p>
+<p>: ：用户分隔用户和用户组</p>
+<blockquote>
+<p>例：</p>
+<p>chmod root hello.txt 将hello.txt所属用户修改为root</p>
+<p>chown :root hello.txt 将hello.txt所属用户修改为root</p>
+<p>chown root:demo hello.txt 将hello.txt所属用户修改为root，用户组修改为demo</p>
+<p>chown -R root test 将文件夹test的所属用户修改为root并对文件夹内全部内容应用同样规则</p>
+</blockquote>
+<h1 id="三、Linux使用技巧"><a href="#三、Linux使用技巧" class="headerlink" title="三、Linux使用技巧"></a>三、Linux使用技巧</h1><h2 id="1-各类小技巧"><a href="#1-各类小技巧" class="headerlink" title="1. 各类小技巧"></a>1. 各类小技巧</h2><p>强制停止程序运行（或命令输入错误，退出当前输入）：<code>ctrl + c</code></p>
+<p>退出账户的登录（退出某些的特定程序的专属页面）：<code>ctrl + d</code></p>
+<p>查看历史输入过的命令：<code>history</code></p>
+<p>匹配历史命令：<code>ctrl + r</code></p>
+<p>光标移动快捷键：</p>
+<p><code>ctrl + a</code>跳到命令开头</p>
+<p><code>ctrl + e</code>跳到命令结尾</p>
+<p><code>ctrl +</code> 键盘左键，向左跳一个单词</p>
+<p><code>ctrl +</code> 键盘右键，向右跳一个单词</p>
+<p>清空终端内容：<code>ctrl + l</code> 或 <code>clear</code>命令</p>
+<h2 id="2-软件安装"><a href="#2-软件安装" class="headerlink" title="2. 软件安装"></a>2. 软件安装</h2><p>yum安装软件</p>
+<p>yum：rpm包软件管理器，用于自动化安装配置linux软件，并可以自动解决依赖问题。</p>
+<p><strong>yum命令</strong></p>
+<p>格式：<code>yum [-y] [install | remove | search] 软件名称</code></p>
+<p>-y：自动确认，无需手动确认安装或卸载过程</p>
+<p>install：安装</p>
+<p>remove：卸载</p>
+<p>search：搜索</p>
+<h2 id="3-systemctl命令"><a href="#3-systemctl命令" class="headerlink" title="3. systemctl命令"></a>3. systemctl命令</h2><p>格式：<code>systemctl start | stop | status | enable | disable 服务名</code></p>
+<p>start启动	stop关闭	status查看状态	enable开机自启	disable关闭开机自启</p>
+<blockquote>
+<p>系统内置的服务都可以通过systemctl控制，例如：</p>
+<p>NetworkManager，主网络服务</p>
+<p>network，副网络服务</p>
+<p>firewalld，防火墙服务</p>
+<p>sshd，ssh服务</p>
+</blockquote>
+<h2 id="4-ln命令-创建软连接"><a href="#4-ln命令-创建软连接" class="headerlink" title="4. ln命令-创建软连接"></a>4. ln命令-创建软连接</h2><p><strong>格式：</strong><code>ln -s 参数1 参数2</code></p>
+<p>-s ：创建软链接</p>
+<p>参数1：被链接的文件或文件夹</p>
+<p>参数2：要链接去的目的地</p>
+<h2 id="5-date命令"><a href="#5-date命令" class="headerlink" title="5. date命令"></a>5. date命令</h2><p><strong>格式：</strong><code>date [-d] [+格式化字符串]</code></p>
+<p>-d：按给定的字符串显示日期</p>
+<p>格式化字符串：通过特定的字符串标记，控制显示的日期格式</p>
+<p><code>%Y</code>：年</p>
+<p><code>%y</code>：年份后两位数字（00-99）</p>
+<p><code>%m</code>：月份</p>
+<p><code>%d</code>：日</p>
+<p><code>%H</code>：小时</p>
+<p><code>%M</code>：分钟</p>
+<p><code>%S</code>：秒</p>
+<p><code>%s</code>：自1970-01-01 00:00:00 UTC 到现在的秒数</p>
+<p>修改Linux时区</p>
+<p>需要使用root权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -f /etc/localtime</span><br><span class="line"></span><br><span class="line">sudo ln -s /user/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+
+
+
+<p>ntp程序</p>
+<p>通过ntp自动校准系统时间</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntpdate -u ntp.aliyun.com  #手动校准</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6-IP地址和主机名"><a href="#6-IP地址和主机名" class="headerlink" title="6. IP地址和主机名"></a>6. IP地址和主机名</h2><p><code>ifconfig</code>命令-查看本机的ip地址</p>
+<p><code>hostname</code> 查看主机名</p>
+<p><code>hostnamectl set-hostname 主机名</code> （需要root）</p>
+<h2 id="7-配置Linux固定ip地址"><a href="#7-配置Linux固定ip地址" class="headerlink" title="7. 配置Linux固定ip地址"></a>7. 配置Linux固定ip地址</h2><p>windows虚拟机中修改ip地址</p>
+<p>虚拟网络编辑器中将vmnet8的子网ip设置为192.168.88.0，NAT设置里网关ip设置为192.168.88.2，通过vim编辑&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33文件，将BOOTPROTP有dhcp改为static，并添加如下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">IPADDR=&quot;192.168.88.130&quot;</span><br><span class="line">NETMASK=&quot;255.255.255.0&quot;</span><br><span class="line">GATEWAY=&quot;192.168.88.2&quot;</span><br><span class="line">DNS1=&quot;192.168.88.2&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-网络请求和下载"><a href="#8-网络请求和下载" class="headerlink" title="8. 网络请求和下载"></a>8. 网络请求和下载</h2><p><strong>使用ping命令检查服务器是否可联通</strong></p>
+<p><strong>格式：</strong><code>ping [-c num] ip或主机名</code></p>
+<p>-c：检查的次数，不使用将无限次持续检查</p>
+<p>ip或主机名，被检查的服务器的ip地址或主机名地址</p>
+<p><strong>使用wget命令下载文件</strong></p>
+<p><strong>格式：</strong><code>wget [-b] url</code></p>
+<p>-b：可选，后台下载，会将日志写在当前目录wget-log文件</p>
+<p>url，下载链接</p>
+<p><strong>使用curl命令发起网络请求</strong></p>
+<p><strong>语法：</strong><code>curl [-0] url</code></p>
+<p>-O，用于下载文件，当url是下载链接时，可以使用此选项保存文件</p>
+<p>url，要发起请求的网络地址</p>
+<h2 id="9-端口"><a href="#9-端口" class="headerlink" title="9. 端口"></a>9. 端口</h2><p><strong>查看主机端口占用：</strong><code>nmap 被查看的ip地址</code></p>
+<p><em>nmap不是系统自带命令，需要先安装：<code>yum -y install nmap</code></em></p>
+<p><strong>查看指定端口占用：</strong><code>netstat -anp | grep 端口号</code> </p>
+<p>netstat也不是系统自带命令，需要先安装：<code>yum -y install net-tools</code></p>
+<h2 id="10-进程管理"><a href="#10-进程管理" class="headerlink" title="10. 进程管理"></a>10. 进程管理</h2><p><strong>查看进程：</strong><code>ps [-e -f]</code></p>
+<p>-e，显示出全部的进程</p>
+<p>-f，以完全格式化的形式展示信息（展示全部信息）</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UID</td>
+<td>进程所属的用户ID</td>
+</tr>
+<tr>
+<td>PID</td>
+<td>进程的进程号ID</td>
+</tr>
+<tr>
+<td>PPID</td>
+<td>进程的父ID（启用此进程的其他进程）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>此进程的CPU占用率（百分比）</td>
+</tr>
+<tr>
+<td>STIME</td>
+<td>进程的启动时间</td>
+</tr>
+<tr>
+<td>TTY</td>
+<td>启动此进程的终端序号，如显示？表示非终端启动</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>进程占用CPU的时间</td>
+</tr>
+<tr>
+<td>CMD</td>
+<td>进程对应的名称或启动路径或启动命令</td>
+</tr>
+</tbody></table>
+<p><strong>查看指定进程：</strong><code>ps -ef | grep tail</code></p>
+<p><strong>关闭进程：</strong><code>kill -9 进程ID</code></p>
+<p>-9，表示强制关闭进程</p>
+<h2 id="11-主机状态"><a href="#11-主机状态" class="headerlink" title="11.主机状态"></a>11.主机状态</h2><p><strong>查看系统资源占用：</strong><code>top</code></p>
+<p>-默认每5秒刷新一次，直接输入top即可，按q或ctrl + c退出</p>
+<p>top命令内容详解：<a target="_blank" rel="noopener" href="http://linux.51yip.com/search/toptop">http://linux.51yip.com/search/toptop</a></p>
+<p>top命令支持的选项：</p>
+<p>-p，只显示某个进程的信息</p>
+<p>-d，设置刷新时间，默认是5s</p>
+<p>-c，显示产生进程的完整命令，默认是进程名</p>
+<p>-n，指定刷新次数，比如top -n 3，刷新输出3次后退后</p>
+<p>-b，以非交互非全屏模式运行，以批次的方式执行top，一般配合-n指定输出几次统计信息，将输出重定向到指定文件，比如top -b -n 3 &gt; &#x2F;tmp&#x2F;top.tmp</p>
+<p>-i，不显示任何闲置（idle）或无用（zombie）的进程</p>
+<p>-u，查找特定用户启动的进程</p>
+
+</article>
+    
+    <div class="trm-reward">
+        
+            <span class="trm-reward-btn trm-glow" onclick='var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === "none") ? "block" : "none";'>
+                <i class="iconfont icon-hand-holding-usd"></i>
+            </span>
+        
+        <p class="trm-reward-comment">每一份支持都如同星星般闪耀✨</p>
+        <div id="qr" style="display:none;">
+            
+                <div style="display:inline-block">
+                    <a rel="noopener noreferrer" href='https://cdn.jsdelivr.net/gh/a1meon/my-videos@latest/images/wx_zanshang.jpg' target='_blank' >
+                       <img src="https://cdn.jsdelivr.net/gh/a1meon/my-videos@latest/images/wx_zanshang.jpg" alt="微信" loading="lazy">
+                    </a>
+                    <p>微信</p>
+                </div>
+            
+        </div>
+    </div>
+
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        a1meon
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="http://a1meon.github.io/2025/03/09/Linux/" title="Linux 笔记">http://a1meon.github.io/2025/03/09/Linux/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/05/22/qingdao/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    未分类
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/05/22/qingdao/" class="trm-anima-link">
+                    壁纸
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/05/22</li>
+                <li>05:53</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+    
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <div>
+    <!-- 页脚 -->
+     <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-copyright">
+                        <p>Copyright © 2025 - 2025. <span class="font-style">a1meon</span></p>
+                        <!-- 博客运行时间 -->
+                         <p >本站已运行 <span id="span_dt_dt" class="font-style"></span> 天</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+
+<script>
+    // 计算博客运行时间,展示在页脚的span_dt_dt
+    window.onload = function () {
+        var createTime = new Date(2025, 0, 1);
+        setInterval(function () {
+            var now = new Date();
+            var days = parseInt((now - createTime) / 1000 / 60 / 60 / 24, 10);
+            var hours = parseInt((now - createTime) / 1000 / 60 / 60 % 24, 10);
+            document.getElementById('span_dt_dt').innerHTML = days;
+        })
+    }
+</script>
+
+
+<style>
+    /* 居中 */
+    .footer {
+        text-align: center;
+    }
+    .font-style {
+        color: #406cff;
+    }
+    .footer-copyright {
+        font-size: 10px;
+    }
+    p {
+        padding-bottom: 10px;
+    }
+</style>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="一、基本命令"><a rel="nofollow" class="trm-toc-link" href="#一、基本命令"><span class="trm-toc-text">一、基本命令</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1. ls命令-列出文件"><a rel="nofollow" class="trm-toc-link" href="#1-ls命令-列出文件"><span class="trm-toc-text">1. ls命令-列出文件</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2. cd命令-切换工作目录"><a rel="nofollow" class="trm-toc-link" href="#2-cd命令-切换工作目录"><span class="trm-toc-text">2. cd命令-切换工作目录</span></a></li><li class="trm-toc-item trm-toc-level-2" title="3. pwd命令-查看当前工作目录"><a rel="nofollow" class="trm-toc-link" href="#3-pwd命令-查看当前工作目录"><span class="trm-toc-text">3. pwd命令-查看当前工作目录</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4. mkdir命令-创建新的目录"><a rel="nofollow" class="trm-toc-link" href="#4-mkdir命令-创建新的目录"><span class="trm-toc-text">4. mkdir命令-创建新的目录</span></a></li><li class="trm-toc-item trm-toc-level-2" title="5. touch命令-创建文件"><a rel="nofollow" class="trm-toc-link" href="#5-touch命令-创建文件"><span class="trm-toc-text">5. touch命令-创建文件</span></a></li><li class="trm-toc-item trm-toc-level-2" title="6. cat命令-查看文件内容"><a rel="nofollow" class="trm-toc-link" href="#6-cat命令-查看文件内容"><span class="trm-toc-text">6. cat命令-查看文件内容</span></a></li><li class="trm-toc-item trm-toc-level-2" title="7. more命令-分页查看文件内容"><a rel="nofollow" class="trm-toc-link" href="#7-more命令-分页查看文件内容"><span class="trm-toc-text">7. more命令-分页查看文件内容</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8. cp命令-复制文件或文件夹"><a rel="nofollow" class="trm-toc-link" href="#8-cp命令-复制文件或文件夹"><span class="trm-toc-text">8. cp命令-复制文件或文件夹</span></a></li><li class="trm-toc-item trm-toc-level-2" title="9. mv命令-移动文件或文件夹"><a rel="nofollow" class="trm-toc-link" href="#9-mv命令-移动文件或文件夹"><span class="trm-toc-text">9. mv命令-移动文件或文件夹</span></a></li><li class="trm-toc-item trm-toc-level-2" title="10. rm命令-删除文件或文件夹"><a rel="nofollow" class="trm-toc-link" href="#10-rm命令-删除文件或文件夹"><span class="trm-toc-text">10. rm命令-删除文件或文件夹</span></a></li><li class="trm-toc-item trm-toc-level-2" title="11. which命令-查找命令的程序文件"><a rel="nofollow" class="trm-toc-link" href="#11-which命令-查找命令的程序文件"><span class="trm-toc-text">11. which命令-查找命令的程序文件</span></a></li><li class="trm-toc-item trm-toc-level-2" title="12. find命令-查找指定文件&#x2F;按文件大小查找文件"><a rel="nofollow" class="trm-toc-link" href="#12-find命令-查找指定文件-按文件大小查找文件"><span class="trm-toc-text">12. find命令-查找指定文件&#x2F;按文件大小查找文件</span></a></li><li class="trm-toc-item trm-toc-level-2" title="13. grep命令-从文件中通过关键字过滤文件行"><a rel="nofollow" class="trm-toc-link" href="#13-grep命令-从文件中通过关键字过滤文件行"><span class="trm-toc-text">13. grep命令-从文件中通过关键字过滤文件行</span></a></li><li class="trm-toc-item trm-toc-level-2" title="14. wc命令-数量统计"><a rel="nofollow" class="trm-toc-link" href="#14-wc命令-数量统计"><span class="trm-toc-text">14. wc命令-数量统计</span></a></li><li class="trm-toc-item trm-toc-level-2" title="15. 管道符 - |"><a rel="nofollow" class="trm-toc-link" href="#15-管道符"><span class="trm-toc-text">15. 管道符 - |</span></a></li><li class="trm-toc-item trm-toc-level-2" title="16. echo - 在命令行内输出指定内容"><a rel="nofollow" class="trm-toc-link" href="#16-echo-在命令行内输出指定内容"><span class="trm-toc-text">16. echo - 在命令行内输出指定内容</span></a></li><li class="trm-toc-item trm-toc-level-2" title="17.tail命令 - 查看文件尾部内容"><a rel="nofollow" class="trm-toc-link" href="#17-tail命令-查看文件尾部内容"><span class="trm-toc-text">17.tail命令 - 查看文件尾部内容</span></a></li><li class="trm-toc-item trm-toc-level-2" title="18.vi 编辑器"><a rel="nofollow" class="trm-toc-link" href="#18-vi-编辑器"><span class="trm-toc-text">18.vi 编辑器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="二、用户"><a rel="nofollow" class="trm-toc-link" href="#二、用户"><span class="trm-toc-text">二、用户</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1. su命令-切换用户"><a rel="nofollow" class="trm-toc-link" href="#1-su命令-切换用户"><span class="trm-toc-text">1. su命令-切换用户</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2. sudo命令-临时以root身份执行其他命令"><a rel="nofollow" class="trm-toc-link" href="#2-sudo命令-临时以root身份执行其他命令"><span class="trm-toc-text">2. sudo命令-临时以root身份执行其他命令</span></a></li><li class="trm-toc-item trm-toc-level-2" title="3. 用户组管理"><a rel="nofollow" class="trm-toc-link" href="#3-用户组管理"><span class="trm-toc-text">3. 用户组管理</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4. 用户管理"><a rel="nofollow" class="trm-toc-link" href="#4-用户管理"><span class="trm-toc-text">4. 用户管理</span></a></li><li class="trm-toc-item trm-toc-level-2" title="5. 查看权限控制信息"><a rel="nofollow" class="trm-toc-link" href="#5-查看权限控制信息"><span class="trm-toc-text">5. 查看权限控制信息</span></a></li><li class="trm-toc-item trm-toc-level-2" title="6. chmod命令-修改文件或文件夹的权限"><a rel="nofollow" class="trm-toc-link" href="#6-chmod命令-修改文件或文件夹的权限"><span class="trm-toc-text">6. chmod命令-修改文件或文件夹的权限</span></a></li><li class="trm-toc-item trm-toc-level-2" title="7. chown命令-修改文件或文件夹的所属用户、用户组"><a rel="nofollow" class="trm-toc-link" href="#7-chown命令-修改文件或文件夹的所属用户、用户组"><span class="trm-toc-text">7. chown命令-修改文件或文件夹的所属用户、用户组</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="三、Linux使用技巧"><a rel="nofollow" class="trm-toc-link" href="#三、Linux使用技巧"><span class="trm-toc-text">三、Linux使用技巧</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1. 各类小技巧"><a rel="nofollow" class="trm-toc-link" href="#1-各类小技巧"><span class="trm-toc-text">1. 各类小技巧</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2. 软件安装"><a rel="nofollow" class="trm-toc-link" href="#2-软件安装"><span class="trm-toc-text">2. 软件安装</span></a></li><li class="trm-toc-item trm-toc-level-2" title="3. systemctl命令"><a rel="nofollow" class="trm-toc-link" href="#3-systemctl命令"><span class="trm-toc-text">3. systemctl命令</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4. ln命令-创建软连接"><a rel="nofollow" class="trm-toc-link" href="#4-ln命令-创建软连接"><span class="trm-toc-text">4. ln命令-创建软连接</span></a></li><li class="trm-toc-item trm-toc-level-2" title="5. date命令"><a rel="nofollow" class="trm-toc-link" href="#5-date命令"><span class="trm-toc-text">5. date命令</span></a></li><li class="trm-toc-item trm-toc-level-2" title="6. IP地址和主机名"><a rel="nofollow" class="trm-toc-link" href="#6-IP地址和主机名"><span class="trm-toc-text">6. IP地址和主机名</span></a></li><li class="trm-toc-item trm-toc-level-2" title="7. 配置Linux固定ip地址"><a rel="nofollow" class="trm-toc-link" href="#7-配置Linux固定ip地址"><span class="trm-toc-text">7. 配置Linux固定ip地址</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8. 网络请求和下载"><a rel="nofollow" class="trm-toc-link" href="#8-网络请求和下载"><span class="trm-toc-text">8. 网络请求和下载</span></a></li><li class="trm-toc-item trm-toc-level-2" title="9. 端口"><a rel="nofollow" class="trm-toc-link" href="#9-端口"><span class="trm-toc-text">9. 端口</span></a></li><li class="trm-toc-item trm-toc-level-2" title="10. 进程管理"><a rel="nofollow" class="trm-toc-link" href="#10-进程管理"><span class="trm-toc-text">10. 进程管理</span></a></li><li class="trm-toc-item trm-toc-level-2" title="11.主机状态"><a rel="nofollow" class="trm-toc-link" href="#11-主机状态"><span class="trm-toc-text">11.主机状态</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont icon-thlist"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont icon-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont icon-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont icon-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont icon-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+        
+<script src="https://npm.elemecdn.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.2.6"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+			<script src="/js/plugins/danmu.js?v=2.2.6"></script>
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+    <script data-swup-reload-script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
