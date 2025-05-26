@@ -76,6 +76,8 @@
 
 
     
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+
     
 
 
@@ -337,7 +339,7 @@
         <!-- card header -->
 <div class="trm-mc-header">
     <div class="trm-avatar-frame trm-mb-20">
-        <img alt="Avatar" class="trm-avatar" src="https://cdn.jsdelivr.net/gh/a1meon/my-videos@latest/images/avatar.jpg">
+        <img alt="Avatar" class="trm-avatar" src="https://raw.githubusercontent.com/a1meon/my-videos/main/images/avatar.jpg">
     </div>
     <h5 class="trm-name trm-mb-15">
         a1meon
@@ -437,7 +439,17 @@
             
             <div class="trm-page-content col-lg-8">
                 <div id="trm-content" class="trm-content">
-                    
+                    <div id="waline" class="trm-card"></div>
+<script type="module" data-swup-reload-script>
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  init({
+    serverURL: 'https://waline.vercel.app',
+    el: '#waline',
+    pageview: true,// 浏览量统计
+    comment: true, // 评论数统计
+  });
+</script>
 
                     <div class="trm-divider footer-divider"></div>
 
