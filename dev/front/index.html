@@ -339,12 +339,25 @@
   import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
 
   init({
-    serverURL: 'https://waline.vercel.app',
+    serverURL: 'https://comment.a1meon.com/',
     el: '#waline',
     pageview: true,// 浏览量统计
     comment: true, // 评论数统计
+    
   });
 </script>
+<style>
+  .wl-content img{
+    width: 80px;
+    display: block;
+    /* margin-bottom: 10px; 可选，添加底部间距 */
+  }
+
+  .wl-emoji{ 
+    width: 20px !important;
+    height: 20px !important;
+  }
+</style>
 
                     <div class="trm-divider footer-divider"></div>
 
