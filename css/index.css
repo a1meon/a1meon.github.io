@@ -791,10 +791,13 @@ html.is-animating .trm-swup-animation {
 .trm-top-bar .container .trm-search-btn {
   cursor: pointer;
 }
-.trm-top-bar .container .trm-mode-switcher-place + .trm-search-btn {
+.trm-top-bar .container .trm-mode-switcher-place {
   margin-left: 20px;
 }
-@media (max-width: 1200px) {
+.trm-top-bar .container .trm-search-btn {
+  margin-left: 10px;
+}
+@media (max-width: 1280px) {
   .trm-top-bar .trm-logo-text {
     display: none;
   }
@@ -817,7 +820,7 @@ html.is-animating .trm-swup-animation {
     pointer-events: none;
     box-shadow: var(--top-bar-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.15));
     transform: translateY(20px);
-    transition: all 0.4s ease-in-out;
+    /* 自定义过渡 */
   }
   .trm-top-bar .container .trm-right-side.trm-active {
     opacity: 1;
@@ -894,7 +897,6 @@ html.is-animating .trm-swup-animation {
   z-index: 9;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s ease-in-out;
 }
 .trm-menu nav ul li ul li {
   height: 50px;
@@ -3919,11 +3921,8 @@ pre .coffeescript .title {
 .card-body {
   background-color: #f5f5f5;
   border-radius: 10px;
-  padding: 30px;
+  padding: 30px 30px 10px 30px;
   font-size: smaller;
-}
-.card-title {
-  margin-bottom: 5px;
 }
 .align-container {
   display: inline-flex;
@@ -3941,6 +3940,6 @@ pre .coffeescript .title {
 .align-container a:hover {
   color: #0077ff;
 }
-.oopz {
+a {
   color: #0077ff;
 }
